@@ -16,17 +16,23 @@ if($todoName){
     file_put_contents('todo.json', json_encode($jsonArray, JSON_PRETTY_PRINT));
 }
 
-echo $todoName;
-
-if(isset($_POST[$jsonArray])){
-    $output = $todo -> $jsonArray;
-    echo json_encode($output);
+if(isset($_POST[main_submit])){
+    $todoName = $_POST['todo_name'] ?? '';
+    echo $jsonArray;
+}else{
+    echo "Insert To Do .. "
 }
 
-if(isset($_POST['todo_name'])){
-    $todoName = $_POST['todo_name'];
-   echo $jsonArray;
- }
+
+// if(isset($_POST[$jsonArray])){
+//     $output = $todo -> $jsonArray;
+//     echo json_encode($output);
+// }
+
+// if(isset($_POST['todo_name'])){
+//     $todoName = $_POST['todo_name'];
+//    echo $jsonArray;
+//  }
 
 
 header('Location: index.php');
